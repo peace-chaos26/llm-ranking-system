@@ -1,0 +1,52 @@
+# configs/base.yaml
+project:
+  name: "ranking-system"
+  version: "0.1.0"
+  seed: 42
+
+data:
+  corpus_path: "data/processed/corpus.jsonl"
+  queries_path: "data/processed/queries.jsonl"
+  qrels_path: "data/processed/qrels.tsv"    # relevance judgments
+  max_corpus_size: 100000
+
+retrieval:
+  model_name: "sentence-transformers/all-MiniLM-L6-v2"
+  top_k: 100                 # candidates passed to ranker
+  index_type: "IVF"          # Flat | IVF | HNSW
+  hybrid:
+    enabled: true
+    dense_weight: 0.7
+    sparse_weight: 0.3
+
+ranking:
+  stage2:
+    model: "lambdamart"
+    top_k: 20                # passed to LLM re-ranker
+  stage3:
+    enabled: true
+    model: "gpt-4o-mini"
+    top_k: 10                # final output
+    max_tokens: 512
+  diversity:
+    enabled: true
+    method: "mmr"
+    lambda: 0.5              # 0 = max diversity, 1 = max relevance
+
+evaluation:
+  metrics: ["ndcg", "mrr", "recall", "diversity", "latency", "cost"]
+  k_values: [1, 5, 10, 20]
+  output_dir: "experiments/results"
+
+logging:
+  level: "INFO"
+  output_dir: "experiments/logs"
+  format: "json"             # structured logs for parsing later
+
+llm:
+  cost_per_1k_input_tokens:
+    "gpt-4o-mini": 0.00015
+    "claude-haiku-3": 0.00025
+  cost_per_1k_output_tokens:
+    "gpt-4o-mini": 0.0006
+    "claude-haiku-3": 0.00125

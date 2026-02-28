@@ -205,3 +205,27 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Environment
+.env
+
+# Data — never commit raw data
+data/raw/
+data/processed/
+data/indexes/
+
+# Experiment outputs — can be large
+experiments/logs/
+experiments/results/
+
+# Python
+.venv/
+__pycache__/
+*.egg-info/
+.ruff_cache/
+
+# MLflow
+mlruns/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
