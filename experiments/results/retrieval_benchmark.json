@@ -1,0 +1,32 @@
+[
+  {
+    "retriever": "BM25",
+    "num_queries": 500,
+    "recall@10": 0.324,
+    "recall@20": 0.402,
+    "recall@50": 0.484,
+    "recall@100": 0.572,
+    "avg_latency_ms": 118.31,
+    "total_time_s": 59.16
+  },
+  {
+    "retriever": "Dense-IVF",
+    "num_queries": 500,
+    "recall@10": 0.68,
+    "recall@20": 0.764,
+    "recall@50": 0.864,
+    "recall@100": 0.896,
+    "avg_latency_ms": 1.36,
+    "total_time_s": 0.68
+  },
+  {
+    "retriever": "Hybrid-RRF",
+    "num_queries": 500,
+    "recall@10": 0.628,
+    "recall@20": 0.766,
+    "recall@50": 0.862,
+    "recall@100": 0.908,
+    "avg_latency_ms": 121.33,
+    "total_time_s": 60.66
+  }
+]
