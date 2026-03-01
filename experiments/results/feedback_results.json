@@ -1,0 +1,47 @@
+{
+  "simulation_config": {
+    "n_queries": 40,
+    "n_sessions_per_query": 100,
+    "n_impressions": 10,
+    "position_bias_eta": 1.0,
+    "click_prob_relevant": 0.8,
+    "click_prob_irrelevant": 0.1
+  },
+  "click_stats": {
+    "total_impressions": 30000,
+    "total_clicks": 1561,
+    "overall_ctr": 0.052
+  },
+  "ranker_comparison": {
+    "original_ground_truth": {
+      "ndcg@5": 0.4879,
+      "mrr@5": 0.3867,
+      "recall@5": 0.8,
+      "precision@5": 0.16,
+      "ndcg@10": 0.5235,
+      "mrr@10": 0.4033,
+      "recall@10": 0.9,
+      "precision@10": 0.09
+    },
+    "naive_clicks_biased": {
+      "ndcg@5": 0.6649,
+      "mrr@5": 0.5867,
+      "recall@5": 0.9,
+      "precision@5": 0.18,
+      "ndcg@10": 0.6649,
+      "mrr@10": 0.5867,
+      "recall@10": 0.9,
+      "precision@10": 0.09
+    },
+    "ips_debiased": {
+      "ndcg@5": 0.6649,
+      "mrr@5": 0.5867,
+      "recall@5": 0.9,
+      "precision@5": 0.18,
+      "ndcg@10": 0.6649,
+      "mrr@10": 0.5867,
+      "recall@10": 0.9,
+      "precision@10": 0.09
+    }
+  }
+}
