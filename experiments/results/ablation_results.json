@@ -1,0 +1,64 @@
+{
+  "reports": [
+    {
+      "config": "1_retrieval_only",
+      "metrics": {
+        "ndcg@5": 0.3524,
+        "mrr@5": 0.2867,
+        "recall@5": 0.55,
+        "precision@5": 0.12,
+        "ndcg@10": 0.3674,
+        "mrr@10": 0.2922,
+        "recall@10": 0.6,
+        "precision@10": 0.065
+      },
+      "latency_ms": 440.0,
+      "cost_per_1k_usd": 0.0
+    },
+    {
+      "config": "2_retrieval_lambdamart",
+      "metrics": {
+        "ndcg@5": 0.418,
+        "mrr@5": 0.3642,
+        "recall@5": 0.6,
+        "precision@5": 0.13,
+        "ndcg@10": 0.4347,
+        "mrr@10": 0.3713,
+        "recall@10": 0.65,
+        "precision@10": 0.07
+      },
+      "latency_ms": 441.1,
+      "cost_per_1k_usd": 0.0
+    },
+    {
+      "config": "3_retrieval_lm_llm",
+      "metrics": {
+        "ndcg@5": 0.4949,
+        "mrr@5": 0.4283,
+        "recall@5": 0.7,
+        "precision@5": 0.14,
+        "ndcg@10": 0.4949,
+        "mrr@10": 0.4283,
+        "recall@10": 0.7,
+        "precision@10": 0.07
+      },
+      "latency_ms": 23930.5,
+      "cost_per_1k_usd": 0.0531
+    },
+    {
+      "config": "4_full_pipeline",
+      "metrics": {
+        "ndcg@5": 0.4949,
+        "mrr@5": 0.4283,
+        "recall@5": 0.7,
+        "precision@5": 0.14,
+        "ndcg@10": 0.4949,
+        "mrr@10": 0.4283,
+        "recall@10": 0.7,
+        "precision@10": 0.07
+      },
+      "latency_ms": 23930.5,
+      "cost_per_1k_usd": 0.0531
+    }
+  ]
+}
